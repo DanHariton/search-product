@@ -1,0 +1,26 @@
+fos_elastica:
+    clients:
+        default: { host: search-product_elasticsearch, port: '%env(ELASTIC_PORT)%' }
+    indexes:
+        product:
+            persistence:
+                driver: orm
+                model: App\Entity\Product
+                provider: ~
+                finder: ~
+            properties:
+                id:
+                    type: integer
+                name:
+                    type: text
+                price:
+                    type: float
+                quantity:
+                    type: integer
+                color:
+                    type: text
+                description:
+                    type: text
+            serializer:
+                groups: [ search ]
+                serialize_null: true
