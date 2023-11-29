@@ -6,6 +6,7 @@ fos_elastica:
             persistence:
                 driver: orm
                 model: App\Entity\Product
+                repository: App\Repository\ProductElasticRepository
                 provider: ~
                 finder: ~
             properties:

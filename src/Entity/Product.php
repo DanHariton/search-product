@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\ProductElasticRepository;
+use App\Repository\ProductMySqlRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ProductElasticRepository::class)]
+#[ORM\Entity(repositoryClass: ProductMySqlRepository::class)]
 class Product
 {
+    public const ELASTIC_INDEX_NAME = 'product';
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
