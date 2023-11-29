@@ -19,3 +19,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd pdo pdo_mysql xdebug apcu intl zip bcmath curl opcache xml sodium exif mbstring
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+COPY . /var/www/html/loggerFiles
+
+RUN chown -R www-data:www-data /var/www/html/loggerFiles
+RUN chmod -R 777 /var/www/html/loggerFiles
