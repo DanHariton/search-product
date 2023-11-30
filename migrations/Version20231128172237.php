@@ -29,6 +29,12 @@ final class Version20231128172237 extends AbstractMigration
             description VARCHAR(255) DEFAULT NULL, 
             PRIMARY KEY(id)
         ) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+
+        $this->addSql("INSERT INTO product (name, price, quantity, color, description)
+            VALUES 
+                ('T-shirt', 100.5, 5, 'red', 'awesome stuff'),
+                ('Skoda', 998, 1, null, 'Scala'),
+                ('Dalmatian', 33, 101, 'black&white', null)");
     }
 
     public function down(Schema $schema): void
